@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-repo-server
+spec:
+  template:
+    spec:
+      volumes:
+        - name: service-account-credentials-volume
+          secret:
+            secretName: gcp-sa
+            items:
+            - key: sa_json
+              path: sa.json
+      containers:
+        - name: argocd-repo-server
+          volumeMounts:
+          - name: service-account-credentials-volume
+            mountPath: /.secrets/gcp
+            readOnly: true
+#            subPath: gcpsa.json
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /.secrets/gcp/sa.json

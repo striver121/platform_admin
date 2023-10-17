@@ -1,1 +1,1 @@
-# platform_admin
+# platform_admins

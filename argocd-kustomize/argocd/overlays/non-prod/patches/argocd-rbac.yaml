@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  labels:
+    app.kubernetes.io/name: argocd-rbac-cm
+data:
+  policy.csv: |
+    p, role:$(ENV)-role0, applications, *, */*, allow
+    p, role:$(ENV)-role0, clusters, get, *, allow
+    p, role:$(ENV)-role0, repositories, get, *, allow
+    p, role:$(ENV)-role0, repositories, create, *, allow
+    p, role:$(ENV)-role0, repositories, update, *, allow
+    p, role:$(ENV)-role0, projects, get, *, allow
+    g, mahir.kadri@thinkresearch.com, role:admin
+    g, sonu.kumar@thinkresearch.com, role:admin
+    g, nilo.barboza@thinkresearch.com, role:admin
+  policy.default: role:readonly
+  scopes: '[http://$(INGRESS_HOST)/groups, name,email,groups]'

@@ -75,18 +75,18 @@ images:
 #   newName: docker.io/striver121/argocdcustom
 #   newTag: latest
  
-#configurations:
-#  - config/config.yaml
-  
-#configMapGenerator:
-#    - name: kustomize-wrapper-vars
-#      literals:
-#        - HOST='ca.argocd-non-prod.gcp.example.com'
-#        - ENV0='non-prod'
-#generatorOptions:
-# disableNameSuffixHash: true
+configurations:
+  - config/config.yaml
  
-#vars:
+configMapGenerator:
+    - name: kustomize-wrapper-vars
+      literals:
+#        - HOST='ca.argocd-non-prod.gcp.example.com'
+        - ENV0='non-prod'
+generatorOptions:
+ disableNameSuffixHash: true
+
+vars:
 #  - name: INGRESS_HOST
 #    objref:
 #      kind: ConfigMap
@@ -94,10 +94,10 @@ images:
 #      apiVersion: v1
 #    fieldref:
 #      fieldpath: data.HOST
-#  - name: ENV
-#    objref:
-#      kind: ConfigMap
-#      name: kustomize-wrapper-vars
-#      apiVersion: v1
-#    fieldref:
-#      fieldpath: data.ENV0
+  - name: ENV
+    objref:
+      kind: ConfigMap
+      name: kustomize-wrapper-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.ENV0

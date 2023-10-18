@@ -25,7 +25,6 @@ RUN apt-get update \
 COPY --from=builder /go/helm-sops/helm-sops /usr/local/bin
 RUN cd /usr/local/bin \
   && mv helm _helm \
-  && mv helm2 _helm2 \
   && mv helm-sops helm \
   && ln helm helm2 \
   && ln helm helm3

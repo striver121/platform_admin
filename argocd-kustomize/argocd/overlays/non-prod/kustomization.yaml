@@ -78,15 +78,15 @@ images:
 #configurations:
 #  - config/config.yaml
   
-configMapGenerator:
-    - name: kustomize-wrapper-vars
-      literals:
+#configMapGenerator:
+#    - name: kustomize-wrapper-vars
+#      literals:
 #        - HOST='ca.argocd-non-prod.gcp.example.com'
-        - ENV0='non-prod'
-generatorOptions:
- disableNameSuffixHash: true
+#        - ENV0='non-prod'
+#generatorOptions:
+# disableNameSuffixHash: true
  
-vars:
+#vars:
 #  - name: INGRESS_HOST
 #    objref:
 #      kind: ConfigMap
@@ -94,10 +94,10 @@ vars:
 #      apiVersion: v1
 #    fieldref:
 #      fieldpath: data.HOST
-  - name: ENV
-    objref:
-      kind: ConfigMap
-      name: kustomize-wrapper-vars
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.ENV0
+#  - name: ENV
+#    objref:
+#      kind: ConfigMap
+#      name: kustomize-wrapper-vars
+#      apiVersion: v1
+#    fieldref:
+#      fieldpath: data.ENV0

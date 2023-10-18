@@ -4,6 +4,6 @@ kind: Kustomization
 bases:
 #- github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=v1.7.7
 - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.8.1
-#- base_patch/pod-security-policy.yaml
+- base_patch/pod-security-policy.yaml
 - base_patch/repo-server-role-binding.yaml
 #- base_patch/base-ingress.yaml

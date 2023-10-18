@@ -9,16 +9,16 @@ resources:
   - patches/argocd-projects.yaml
   - patches/argocd-applications.yaml
 
-generators:
-  - generators/generator.yaml
+#generators:
+#  - generators/generator.yaml
 
 patchesStrategicMerge:
   - resources/argocd-repo-server-deploy.yaml
-  - resources/argocd-repo-server-gcloud-sa.yaml
+#  - resources/argocd-repo-server-gcloud-sa.yaml
   - resources/argocd-server-role-binding.yaml
   - resources/argocd-application-controller-binding.yaml
   - patches/argocd-rbac.yaml
-  - patches/argocd-ingress-custom.yaml
+#  - patches/argocd-ingress-custom.yaml
 
 patchesJson6902:
 - target:
@@ -71,29 +71,29 @@ images:
  - name: argoproj/argocd:v1.7.7
    newName: gcr.io/xxx/argocd
    newTag: v1.7.7
- - name: gcr.io/xxx/argocd:v1.6.2
-   newName: gcr.io/xxx/argocd
-   newTag: v1.7.7
-
-configurations:
-  - config/config.yaml
+ - name: docker.io/striver121/argocdcustom:latest
+   newName: docker.io/striver121/argocdcustom
+   newTag: latest
+ 
+#configurations:
+#  - config/config.yaml
   
 configMapGenerator:
     - name: kustomize-wrapper-vars
       literals:
-        - HOST='ca.argocd-non-prod.gcp.example.com'
+#        - HOST='ca.argocd-non-prod.gcp.example.com'
         - ENV0='non-prod'
 generatorOptions:
  disableNameSuffixHash: true
  
 vars:
-  - name: INGRESS_HOST
-    objref:
-      kind: ConfigMap
-      name: kustomize-wrapper-vars
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.HOST
+#  - name: INGRESS_HOST
+#    objref:
+#      kind: ConfigMap
+#      name: kustomize-wrapper-vars
+#      apiVersion: v1
+#    fieldref:
+#      fieldpath: data.HOST
   - name: ENV
     objref:
       kind: ConfigMap

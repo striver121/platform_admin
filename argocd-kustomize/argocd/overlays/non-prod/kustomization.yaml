@@ -68,12 +68,12 @@ patchesJson6902:
       value: pod-security-policy-argocd-non-prod
       
 images:
- - name: argoproj/argocd:v1.7.7
-   newName: gcr.io/xxx/argocd
-   newTag: v1.7.7
- - name: docker.io/striver121/argocdcustom:latest
+ - name: argoproj/argocd:v2.8.1
    newName: docker.io/striver121/argocdcustom
    newTag: latest
+# - name: docker.io/striver121/argocdcustom:latest
+#   newName: docker.io/striver121/argocdcustom
+#   newTag: latest
  
 #configurations:
 #  - config/config.yaml

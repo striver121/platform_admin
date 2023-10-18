@@ -1,0 +1,19 @@
+{
+        "data": "ENC[AES256_GCM,data:
+        "sops": {
+                "kms": null,
+                "gcp_kms": [
+                        {
+                                "resource_id": "path_to_your_KMS_key",
+                                "created_at": "2021-01-08T17:23:21Z",
+                                "enc": "CiQAalxltIzNTtYtjLNvjiRQZ+GCjG6KTRlHYlL1bDK8pqqUuVUSSQCnsuc804n/BBvm1SK0SmlJ1NIg3aeardslnVM0/Tg62YeAYz1Ye9f9dZAjkg1rEil/IyYw/5E2tsfafTjksUr74JClQZ8DRw0="
+                        }
+                ],
+                "azure_kv": null,
+                "lastmodified": "2021-01-08T17:23:26Z",
+                "mac": "ENC[AES256_GCM,data:GK/vkYh4SZWIage0jQO0dgLijHA5eZW+UQjtoRY8CE0sdzriFJTZ87JFVGF54lxtMiU3XZwgJCpO051fd4N26Cs1apfO5s+wP6gNd0UgcyC43NC+nRtstN5ou8TnYklwc9Im76TtTctJyvxG67e9xl70uo/J447vTSGLoHDQr/o=,iv:KDS6t7FfeG1W+k5kpUXxCuXoUry3y5S2ZdG49jUq6ls=,tag:JU6UfxJ2tQI6xLam1mtiRA==,type:str]",
+                "pgp": null,
+                "unencrypted_suffix": "_unencrypted",
+                "version": "3.5.0"
+        }
+}

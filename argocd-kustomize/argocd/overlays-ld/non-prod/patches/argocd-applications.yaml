@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-applications-$(ENV)
+  name: argocd-$(ENV)-applications
   namespace: argocd-$(ENV)
 spec:
   project: project-$(ENV)
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: bitbucket.org:example/argocd-applications-$(ENV)
+    repoURL: bitbucket.org:example/argocd-$(ENV)-applications
     targetRevision: master
     path: applications
   syncPolicy:

@@ -6,7 +6,7 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: argocd-$(ENV)-server
+  name: argocd-server-$(ENV)
 rules:
 - apiGroups:
   - '*'
@@ -22,11 +22,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: argocd-$(ENV)-server
+  name: argocd-server-$(ENV)
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: argocd-$(ENV)-server
+  name: argocd-server-$(ENV)
 subjects:
 - kind: ServiceAccount
   name: argocd-server

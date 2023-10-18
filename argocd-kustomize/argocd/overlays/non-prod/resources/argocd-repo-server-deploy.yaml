@@ -11,7 +11,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: install-goaboutsops
-          image: gcr.io/xxx/example-busybox:v0.1.1
+          image: docker.io/striver121/argocdcustom:latest
           command: ["/bin/sh", "-c"]
           securityContext:
             runAsUser: 1001
@@ -44,4 +44,4 @@ spec:
           env:
             - name: XDG_CONFIG_HOME
               value: /.config
-          image: gcr.io/xxx/argocd:v1.6.2
+          image: docker.io/striver121/argocdcustom:latest

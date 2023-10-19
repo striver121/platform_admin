@@ -19,6 +19,8 @@ spec:
 #            fsGroup: 2000
 #            fsGroupChangePolicy: "OnRootMismatch"
 #            runAsNonRoot: true
+             runAsUser: 0 
+             allowPrivilegeEscalation: true
           args:
             - echo "Installing goabout kustomize sops...";
               set -e;

@@ -13,12 +13,12 @@ spec:
         - name: install-goaboutsops
           image: docker.io/busybox:1.36
           command: ["/bin/sh", "-c"]
-          securityContext:
-            runAsUser: 1000
-            runAsGroup: 2000
+#          securityContext:
+#            runAsUser: 1000
+#            runAsGroup: 2000
 #            fsGroup: 2000
 #            fsGroupChangePolicy: "OnRootMismatch"
-            runAsRoot: true
+#            runAsNonRoot: true
           args:
             - echo "Installing goabout kustomize sops...";
               set -e;

@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-$(ENV)-cluster-applications
+  name: platform-admin
 spec:
   sourceRepos:
   - '*'
@@ -33,69 +33,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-$(ENV)
-spec:
-  sourceRepos:
-  - '*'
-  destinations:
-  - namespace: '*'
-    server: '*'
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceBlacklist:
-  - group: ''
-    kind: ''
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  syncWindows:
-  - kind: allow
-    schedule: '10 * * * *'
-    duration: 1h
-    applications:
-    - '*'
-    namespaces:
-    - '*'
-    clusters:
-    - '*'
-    manualSync: true
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: project-$(ENV)-dev
-spec:
-  sourceRepos:
-  - '*'
-  destinations:
-  - namespace: '*'
-    server: '*'
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceBlacklist:
-  - group: ''
-    kind: ''
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  syncWindows:
-  - kind: allow
-    schedule: '10 * * * *'
-    duration: 1h
-    applications:
-    - '*'
-    namespaces:
-    - '*'
-    clusters:
-    - '*'
-    manualSync: true
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: project-$(ENV)-stg
+  name: platform-devs
 spec:
   sourceRepos:
   - '*'

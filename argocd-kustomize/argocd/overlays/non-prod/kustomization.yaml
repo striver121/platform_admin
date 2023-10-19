@@ -68,7 +68,7 @@ patchesJson6902:
       value: pod-security-policy-argocd-non-prod
       
 images:
- - name: argoproj/argocd:v2.8.1
+ - name: quay.io/argoproj/argocd:v2.8.1
    newName: docker.io/striver121/argocdcustom
    newTag: latest
 # - name: docker.io/striver121/argocdcustom:latest

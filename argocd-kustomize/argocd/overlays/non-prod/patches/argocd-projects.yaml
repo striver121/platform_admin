@@ -5,7 +5,7 @@ metadata:
   name: platform-admin
 spec:
   sourceRepos:
-  - '*'
+  - 'https://github.com/striver121/platform_admin.git'
   destinations:
   - namespace: '*'
     server: '*'
@@ -36,7 +36,7 @@ metadata:
   name: platform-devs
 spec:
   sourceRepos:
-  - '*'
+  - 'https://github.com/striver121/platform_devs.git'
   destinations:
   - namespace: '*'
     server: '*'

@@ -70,7 +70,7 @@ patchesJson6902:
 images:
  - name: quay.io/argoproj/argocd:v2.8.1
    newName: docker.io/striver121/argocdcustom
-   newTag: latest
+   newTag: v0.4
 # - name: docker.io/striver121/argocdcustom:latest
 #   newName: docker.io/striver121/argocdcustom
 #   newTag: latest

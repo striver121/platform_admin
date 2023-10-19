@@ -14,13 +14,11 @@ spec:
           image: docker.io/busybox:1.36
           command: ["/bin/sh", "-c"]
           securityContext:
-            runAsUser: 999
-#            runAsGroup: 999
-#            fsGroup: 2000
-#            fsGroupChangePolicy: "OnRootMismatch"
-#            runAsNonRoot: true
-             runAsUser: 0 
-             allowPrivilegeEscalation: true
+            runAsUser: 1001
+            runAsGroup: 1001
+            runAsNonRoot: true
+#             runAsUser: 0 
+#             allowPrivilegeEscalation: true
           args:
             - echo "Installing goabout kustomize sops...";
               set -e;

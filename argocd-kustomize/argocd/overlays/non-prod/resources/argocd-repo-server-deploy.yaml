@@ -15,8 +15,10 @@ spec:
           command: ["/bin/sh", "-c"]
           securityContext:
             runAsUser: 1001
-            runAsGroup: 1001
-            runAsNonRoot: true
+            runAsGroup: 2000
+            fsGroup: 2000
+            fsGroupChangePolicy: "OnRootMismatch"
+#            runAsNonRoot: true
           args:
             - echo "Installing goabout kustomize sops...";
               set -e;

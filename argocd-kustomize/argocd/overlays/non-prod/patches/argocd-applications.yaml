@@ -11,7 +11,6 @@ spec:
     repoURL: github.com/striver121/platform_devs.git
     path: dev-apps-def
     targetRevision: master
-    path: applications
   syncPolicy:
     automated:
       prune: true

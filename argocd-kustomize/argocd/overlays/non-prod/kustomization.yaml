@@ -6,7 +6,7 @@ namespace: argocd-non-prod
 resources:
   - ../../base
   - resources/argocd-cluster-role-binding.yaml
-#  - patches/argocd-projects.yaml
+  - patches/argocd-projects.yaml
 #  - apps/admin_apps.yaml
   - apps/dev_apps.yaml
 

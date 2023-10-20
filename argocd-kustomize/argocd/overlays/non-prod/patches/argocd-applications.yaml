@@ -20,3 +20,25 @@ spec:
     - CreateNamespace=true
     retry:
       limit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demoapp-dev
+spec:
+  project: platform_devs
+  destination:
+    server: https://34.31.116.147
+  source:
+    repoURL: github.com/striver121/platform_devs.git
+    targetRevision: master
+    path: dev-apps-def
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=true
+    - CreateNamespace=true
+    retry:
+      limit: 5

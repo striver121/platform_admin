@@ -8,6 +8,8 @@ resources:
   - resources/argocd-cluster-role-binding.yaml
 #  - patches/argocd-projects.yaml
 #  - patches/argocd-applications.yaml
+#  - apps/admin_apps.yaml
+  - apps/dev_apps.yaml
 
 #generators:
 #  - generators/generator.yaml

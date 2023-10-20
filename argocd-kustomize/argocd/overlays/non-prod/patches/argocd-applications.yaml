@@ -9,9 +9,9 @@ spec:
   destination:
     server: https://34.31.116.147
   source:
-    repoURL: github.com/striver121/platform_admin.git
+    repoURL: github.com/striver121/platform_dev.git
     targetRevision: master
-    path: argocd-kustomize/argocd/overlays/non-prod
+    path: dev-apps-defs
   syncPolicy:
     automated:
       prune: true

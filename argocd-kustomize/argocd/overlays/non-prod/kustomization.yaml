@@ -111,3 +111,6 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.ENV0
+
+#value: [{"name": "vault-init","image": "nginx","imagePullPolicy": "IfNotPresent","volumeMounts": [{"mountPath": "/secret","name": "vault-secret"}],"env": [{"name": "VAULT_ENTRY","valueFrom": {"fieldRef": {"apiVersion": "v1","fieldPath": "metadata.annotations['vault.k8s.corp.net/role']"}}}]}]
+#value: {"name": "vault-secret","emptyDir": {"medium": "Memory"}}      

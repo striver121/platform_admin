@@ -6,15 +6,18 @@ metadata:
   namespace: argocd-non-prod
   annotations:
     # resolves to 'my-application' and 'shared'
-    argocd.argoproj.io/manifest-generate-paths: demoapp/overlays/dev; demoapp/overlays/prd
+    argocd.argoproj.io/manifest-generate-paths: demoapp
 spec:
   project: platform-admin
   destination:
     server: https://34.31.116.147
   source:
-    repoURL: github.com/striver121/platform_devs.git
+  - repoURL: github.com/striver121/platform_devs.git
     targetRevision: master
     path: dev-apps-defs
+  - repoURL: github.com/striver121/platform_devs.git
+    targetRevision: master
+    path: demoapp/overlays/dev
   syncPolicy:
     automated:
       prune: true

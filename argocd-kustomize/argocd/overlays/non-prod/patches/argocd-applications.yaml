@@ -4,20 +4,17 @@ kind: Application
 metadata:
   name: dev-applications
   namespace: argocd-non-prod
-  annotations:
-    # resolves to 'my-application' and 'shared'
-    argocd.argoproj.io/manifest-generate-paths: demoapp
+#  annotations:
+#    # resolves to 'my-application' and 'shared'
+#    argocd.argoproj.io/manifest-generate-paths: demoapp
 spec:
-  project: platform-admin
+  project: platform-dev
   destination:
     server: https://34.31.116.147
   source:
-    - repoURL: github.com/striver121/platform_devs.git
-      targetRevision: master
-      path: dev-apps-defs
-    - repoURL: github.com/striver121/platform_devs.git
-      targetRevision: master
-      path: demoapp/overlays/dev
+  repoURL: github.com/striver121/platform_devs.git
+    targetRevision: master
+    path: demoapp/overlays/dev
   syncPolicy:
     automated:
       prune: true
@@ -34,7 +31,7 @@ metadata:
   name: dev-applications-01
   namespace: argocd-non-prod
 spec:
-  project: platform-devs
+  project: default
   destination:
     server: https://34.31.116.147
   source:

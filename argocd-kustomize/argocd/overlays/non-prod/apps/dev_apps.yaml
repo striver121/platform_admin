@@ -5,7 +5,7 @@ metadata:
   name: demoapp-dev
   namespace: argocd-non-prod
 spec:
-  project: default
+  project: platform-devs
   destination:
     server: https://34.31.116.147
     namespace: demoapp-dev

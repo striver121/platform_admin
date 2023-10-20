@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dev-applications
-#  namespace: argocd-non-prod
+  namespace: argocd-non-prod
 spec:
   project: platform-admin
   destination:
@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: github.com/striver121/platform_devs.git
     targetRevision: master
-    path: dev-apps-defs/
+    path: dev-apps-defs
   syncPolicy:
     automated:
       prune: true

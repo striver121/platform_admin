@@ -3,13 +3,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demoapp-dev
-  namespace: argocd-non-prod
 spec:
   project: platform_admin
   destination:
     server: https://34.31.116.147
   source:
-    repoURL: github.com/striver121/platform_devs/dev-apps-def
+    repoURL: github.com/striver121/platform_devs.git
+    path: dev-apps-def
     targetRevision: master
     path: applications
   syncPolicy:
@@ -18,6 +18,5 @@ spec:
       selfHeal: true
     syncOptions:
     - Validate=true
-    - CreateNamespace=true
     retry:
       limit: 5

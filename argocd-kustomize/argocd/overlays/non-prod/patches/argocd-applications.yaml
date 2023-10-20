@@ -4,6 +4,9 @@ kind: Application
 metadata:
   name: dev-applications
   namespace: argocd-non-prod
+  annotations:
+    # resolves to 'my-application' and 'shared'
+    argocd.argoproj.io/manifest-generate-paths: demoapp/overlays/dev; demoapp/overlays/prd
 spec:
   project: platform-admin
   destination:

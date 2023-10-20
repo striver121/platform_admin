@@ -3,8 +3,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: platform-admin
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io  
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io  
 spec:
   sourceRepos:
   - '*'
@@ -36,11 +36,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: platform-devs
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io  
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io  
 spec:
   sourceRepos:
-  - 'https://github.com/striver121/platform_devs.git'
+  - '*'
   destinations:
   - namespace: '*'
     server: '*'

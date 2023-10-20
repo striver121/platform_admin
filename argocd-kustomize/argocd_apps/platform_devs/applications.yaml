@@ -10,7 +10,7 @@ spec:
     server: https://34.31.116.147
     namespace: demoapp-dev
   source:
-  repoURL: github.com/striver121/platform_devs.git
+    repoURL: github.com/striver121/platform_devs.git
     targetRevision: master
     path: demoapp/overlays/dev
   syncPolicy:

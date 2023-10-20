@@ -12,12 +12,12 @@ spec:
   destination:
     server: https://34.31.116.147
   source:
-  - repoURL: github.com/striver121/platform_devs.git
-    targetRevision: master
-    path: dev-apps-defs
-  - repoURL: github.com/striver121/platform_devs.git
-    targetRevision: master
-    path: demoapp/overlays/dev
+    - repoURL: github.com/striver121/platform_devs.git
+      targetRevision: master
+      path: dev-apps-defs
+    - repoURL: github.com/striver121/platform_devs.git
+      targetRevision: master
+      path: demoapp/overlays/dev
   syncPolicy:
     automated:
       prune: true

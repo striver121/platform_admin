@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-applications-$(ENV)
-  namespace: argocd-$(ENV)
+  name: demoapp-dev
+  namespace: argocd-non-prod
 spec:
-  project: project-$(ENV)
+  project: platform_devs
   destination:
-    server: https://kubernetes.default.svc
+    server: https://34.31.116.147
   source:
-    repoURL: bitbucket.org:example/argocd-applications-$(ENV)
+    repoURL: github.com/striver121/platform_devs/demoapp/overlays/dev
     targetRevision: master
     path: applications
   syncPolicy:

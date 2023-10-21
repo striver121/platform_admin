@@ -1,8 +1,5 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
 helmCharts:
-- name: jenkins
-  repo: https://charts.jenkins.io
-  releaseName: jenkins
-  version: 4.8.0
-  valuesFile: values.yaml
+- name: apache
+  repo: https://cloudnativeapp.github.io/charts/curated/
+  version: 4.2.0
+  releaseName: my-apache

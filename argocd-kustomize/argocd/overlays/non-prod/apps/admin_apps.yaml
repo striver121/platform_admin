@@ -1,29 +1,3 @@
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: jenkins-prd
-#  namespace: argocd-non-prod
-#spec:
-#  project: platform-admin
-#  destination:
-#    server: https://34.31.116.147
-#    namespace: jenkins-prd
-#  source:
-#    plugin:
-#      name: kustomize-enable-helm
-#    repoURL: github.com/striver121/platform_admin.git
-#    targetRevision: master
-#    path: platform_apps/jenkins/overlays/prd
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#    - Validate=true
-#    - CreateNamespace=true
-#    retry:
-#      limit: 5
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -31,34 +5,60 @@ metadata:
   name: jenkins-prd
   namespace: argocd-non-prod
 spec:
-  destination:
-    namespace: jenkins-prd
-    server: https://34.31.116.147
   project: platform-admin
+  destination:
+    server: https://34.31.116.147
+    namespace: jenkins-prd
   source:
-    helm:
-      parameters:
-        - name: build.enabled
-          value: "false"
-        - name: deploy.route.enabled
-          value: "false"
-#        - name: image.name
-#          value: quay.io/redhatworkshops/gitops-helm-quarkus
-    chart: jenkins
-    repoURL: https://charts.jenkins.io
-    targetRevision: 4.8.0
+    plugin:
+      name: kustomize-enable-helm
+    repoURL: github.com/striver121/platform_admin.git
+    targetRevision: master
+    path: platform_apps/jenkins/overlays/prd
   syncPolicy:
-    retry:
-      backoff:
-        duration: 5s
-        factor: 2
-        maxDuration: 3m0s
-      limit: 5
     automated:
       prune: true
       selfHeal: true
     syncOptions:
+    - Validate=true
     - CreateNamespace=true
+    retry:
+      limit: 5
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: jenkins-prd
+#  namespace: argocd-non-prod
+#spec:
+#  destination:
+#    namespace: jenkins-prd
+#    server: https://34.31.116.147
+#  project: platform-admin
+#  source:
+#    helm:
+#      parameters:
+#        - name: build.enabled
+#          value: "false"
+#        - name: deploy.route.enabled
+#          value: "false"
+#        - name: image.name
+#          value: quay.io/redhatworkshops/gitops-helm-quarkus
+#    chart: jenkins
+#    repoURL: https://charts.jenkins.io
+#    targetRevision: 4.8.0
+#  syncPolicy:
+#    retry:
+#      backoff:
+#        duration: 5s
+#        factor: 2
+#        maxDuration: 3m0s
+#      limit: 5
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#    - CreateNamespace=true
       
 #---
 #apiVersion: argoproj.io/v1alpha1

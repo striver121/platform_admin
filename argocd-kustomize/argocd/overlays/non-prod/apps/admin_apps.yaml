@@ -13,7 +13,7 @@ spec:
     plugin:
       name: kustomize-enable-helm
     repoURL: https://github.com/striver121/platform_admin.git
-    targetRevision: master
+    targetRevision: HEAD
     path: platform_apps/jenkins/overlays/prd
   syncPolicy:
     automated:

@@ -24,111 +24,27 @@ spec:
     - CreateNamespace=true
     retry:
       limit: 5
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: jenkins-prd
-#  namespace: argocd-non-prod
-#spec:
-#  destination:
-#    namespace: jenkins-prd
-#    server: https://34.31.116.147
-#  project: platform-admin
-#  source:
-#    helm:
-#      parameters:
-#        - name: build.enabled
-#          value: "false"
-#        - name: deploy.route.enabled
-#          value: "false"
-#        - name: image.name
-#          value: quay.io/redhatworkshops/gitops-helm-quarkus
-#    chart: jenkins
-#    repoURL: https://charts.jenkins.io
-#    targetRevision: 4.8.0
-#  syncPolicy:
-#    retry:
-#      backoff:
-#        duration: 5s
-#        factor: 2
-#        maxDuration: 3m0s
-#      limit: 5
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#    - CreateNamespace=true
-      
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: argocd-prod
-#  namespace: argocd-master
-#spec:
-#  project: argocd-slave-apps
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: argocd-prod
-#  source:
-#    repoURL: bitbucket.org:/example/argocd-slave-apps
-#    targetRevision: master
-#    path: argocd/overlays/prod
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#    - Validate=true
-#    - CreateNamespace=true
-#    retry:
-#      limit: 5
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: argocd-pre-prod
-#  namespace: argocd-master
-#spec:
-#  project: argocd-slave-apps
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: argocd-pre-prod
-#  source:
-#    repoURL: bitbucket.org:example/argocd-slave-apps
-#    targetRevision: master
-#    path: argocd/overlays/pre-prod
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#    - Validate=true
-#    - CreateNamespace=true
-#    retry:
-#      limit: 5
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: argocd-non-prod
-#  namespace: argocd-master
-#spec:
-#  project: argocd-slave-apps
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: argocd-non-prod
-#  source:
-#    repoURL: bitbucket.org:example/argocd-slave-apps
-#    targetRevision: master
-#    path: argocd/overlays/non-prod
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#    - Validate=true
-#    - CreateNamespace=true
-#    retry:
-#      limit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-dev
+  namespace: argocd-non-prod
+spec:
+  project: platform-admin
+  destination:
+    server: https://34.31.116.147
+    namespace: vault-dev
+  source:
+    repoURL: https://github.com/striver121/platform_admin.git
+    targetRevision: HEAD
+    path: platform_apps/vault/overlays/dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=true
+    - CreateNamespace=true
+    retry:
+      limit: 5

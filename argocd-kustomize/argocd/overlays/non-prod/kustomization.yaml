@@ -30,7 +30,7 @@ patchesJson6902:
   patch: |-
     - op: add
       path: data/data
-      value: {"kustomize.buildOptions": "--enable-alpha-plugins"}
+      value: {"kustomize.buildOptions": "--enable-helm"}
 - target:
     group: "rbac.authorization.k8s.io"
     version: v1

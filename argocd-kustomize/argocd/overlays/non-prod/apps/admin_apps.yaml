@@ -10,8 +10,8 @@ spec:
     server: https://34.31.116.147
     namespace: jenkins-prd
   source:
-    plugin:
-      name: kustomize-enable-helm
+#    plugin:
+#      name: kustomize-enable-helm
     repoURL: https://github.com/striver121/platform_admin.git
     targetRevision: HEAD
     path: platform_apps/jenkins/overlays/prd

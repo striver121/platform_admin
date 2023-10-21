@@ -2,17 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demoapp-dev
+  name: jenkins-prd
   namespace: argocd-non-prod
 spec:
-  project: default
+  project: platform-admin
   destination:
     server: https://34.31.116.147
-    namespace: demoapp-dev
+    namespace: jenkins-prd
   source:
-    repoURL: github.com/striver121/platform_devs.git
+    plugin:
+      name: kustomize-enable-helm
+    repoURL: github.com/striver121/platform_admin.git
     targetRevision: master
-    path: demoapp/overlays/dev
+    path: platform_apps/jenkins/overlays/prd
   syncPolicy:
     automated:
       prune: true

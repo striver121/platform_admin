@@ -4,6 +4,5 @@ helmCharts:
 - name: jenkins
   repo: https://charts.jenkins.io
   releaseName: jenkins
-  namespace: jenkins0
   version: 4.8.0
   valuesFile: values.yaml

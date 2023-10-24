@@ -11,7 +11,7 @@ spec:
             secretName: gcp-sa
             items:
             - key: sa_json
-#              path: sa.json
+              path: sa.json
       containers:
         - name: argocd-repo-server
           volumeMounts:

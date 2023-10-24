@@ -1,0 +1,9 @@
+---
+apiVersion: goabout.com/v1beta1
+kind: SopsSecretGenerator
+metadata:
+  name: jenkins-secrets-secret
+data:
+    - secrets/hudson.util.Secret.base64.enc
+    - secrets/master.key.base64.enc
+disableNameSuffixHash: true

@@ -5,5 +5,5 @@ metadata:
   name: jenkins-secrets-secret
 files:
     - generators/secrets/master.key.base64.enc
-#    - secrets/hudson.util.Secret.base64.enc
+    - generators/secrets/hudson.util.Secret.base64.enc
 disableNameSuffixHash: true

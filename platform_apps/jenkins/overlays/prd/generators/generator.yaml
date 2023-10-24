@@ -4,6 +4,6 @@ kind: SopsSecretGenerator
 metadata:
   name: jenkins-secrets-secret
 files:
-    - secrets/master.key.base64.enc
+    - generators/secrets/master.key.base64.enc
 #    - secrets/hudson.util.Secret.base64.enc
 disableNameSuffixHash: true

@@ -32,15 +32,6 @@ patchesJson6902:
       path: data/data
       value: {"kustomize.buildOptions": "--enable-helm"}
 - target:
-    group: ""
-    version: v1
-    kind: ConfigMap
-    name: argocd-cm
-  patch: |-
-    - op: merge
-      path: data/data
-      value: {"kustomize.buildOptions": "--enable-alpha-plugins"}      
-- target:
     group: "rbac.authorization.k8s.io"
     version: v1
     kind: ClusterRole

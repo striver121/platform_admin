@@ -22,16 +22,16 @@ patchesStrategicMerge:
 #  - patches/argocd-ingress-custom.yaml
 
 patchesJson6902:
-#- target:
-#    group: ""
-#    version: v1
-#    kind: ConfigMap
-#    name: argocd-cm
-#  patch: |-
-#    - op: add
-#      path: data/data
+- target:
+    group: ""
+    version: v1
+    kind: ConfigMap
+    name: argocd-cm
+  patch: |-
+    - op: add
+      path: data/data
 #      value: {"kustomize.buildOptions": "--enable-helm"}      
-#      value: {"kustomize.buildOptions": "--enable-alpha-plugins"}
+      value: {"kustomize.buildOptions": "--enable-alpha-plugins"}
 #      value: {"kustomize.buildOptions": "--enable-helm"}
 - target:
     group: "rbac.authorization.k8s.io"

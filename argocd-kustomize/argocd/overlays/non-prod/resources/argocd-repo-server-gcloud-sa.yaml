@@ -10,7 +10,7 @@ spec:
           secret:
             secretName: gcp-sa
             items:
-            - key: gcp_sa
+            - key: sa.json
               path: sa.json
       containers:
         - name: argocd-repo-server

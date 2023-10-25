@@ -8,7 +8,7 @@ spec:
       volumes:
         - name: jenkins-keys
           secret:
-            secretName: jenkins-secret-secret
+            secretName: jenkins-secret-secret-prd
             items:
             - key: master.key.base64.enc
               path: master.key

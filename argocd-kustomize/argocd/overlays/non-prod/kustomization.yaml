@@ -15,7 +15,7 @@ resources:
 
 patchesStrategicMerge:
   - resources/argocd-repo-server-deploy.yaml
-  - resources/argocd-repo-server-gcloud-sa.yaml
+#  - resources/argocd-repo-server-gcloud-sa.yaml
   - resources/argocd-server-role-binding.yaml
   - resources/argocd-application-controller-binding.yaml
   - patches/argocd-rbac.yaml

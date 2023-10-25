@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jenkins
+spec:
+  template:
+    spec:
+      volumes:
+        - name: jenkins-keys
+          secret:
+            secretName: jenkins-secret-secret
+            items:
+            - key: master.key.base64.enc
+              path: master.key
+            - key: hudson.util.Secret.base64.enc
+              path: hudson.util.Secret
+        - name: jenkins-credentials
+          secret:
+            secretName: jenkins-credentials
+            items:
+            - key: credentials.xml.base64.enc
+              path: credentials.xml
+      containers:
+        - name: jenkins
+          volumeMounts:
+          - name: jenkins-keys
+            mountPath: /var/jenkins_home/secrets
+            readOnly: true
+          - name: jenkins-credentials
+            mountPath: /var/jenkins_home
+            readOnly: true

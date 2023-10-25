@@ -19,7 +19,7 @@ spec:
             secretName: jenkins-credentials
             items:
             - key: credentials.xml.base64.enc
-              path: credentials.xml
+#              path: credentials.xml
       containers:
         - name: jenkins
           volumeMounts:
@@ -28,5 +28,5 @@ spec:
             readOnly: true
           - name: jenkins-credentials
             mountPath: /var/jenkins_home/credentials.xml
-#            subPath: credentials.xml
+            subPath: credentials.xml
             readOnly: true

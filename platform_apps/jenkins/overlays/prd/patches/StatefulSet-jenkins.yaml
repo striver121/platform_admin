@@ -27,6 +27,6 @@ spec:
             mountPath: /var/jenkins_home/secrets
             readOnly: true
           - name: jenkins-credentials
-            mountPath: /var/jenkins_home
-            subPath: credentials.xml
+            mountPath: /var/jenkins_home/credentials.xml
+#            subPath: credentials.xml
             readOnly: true

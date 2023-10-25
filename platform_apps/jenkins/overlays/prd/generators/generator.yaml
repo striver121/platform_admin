@@ -5,7 +5,7 @@ metadata:
   name: jenkins-secrets-secret
 file:
     - generators/secrets/master.key.base64.enc
-    - generators/secrets/hudson.util.Secret.base64.enc
+#    - generators/secrets/hudson.util.Secret.base64.enc
 disableNameSuffixHash: true
 #---
 #apiVersion: goabout.com/v1beta1

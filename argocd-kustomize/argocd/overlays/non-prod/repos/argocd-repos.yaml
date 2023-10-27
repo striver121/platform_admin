@@ -1,13 +1,22 @@
+---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: argocd-repos
+  name: secrets-store-csi-driver
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
   name: secrets-store-csi-driver
   type: helm
   url: https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: googleapis
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
   name: istio.io
   type: helm
   url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts

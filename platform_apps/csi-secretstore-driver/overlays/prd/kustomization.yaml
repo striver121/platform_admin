@@ -6,5 +6,4 @@ namesuffix: -prd
 
 resources:
   - ../../base
-  - https://raw.githubusercontent.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp/main/deploy/provider-gcp-plugin.yaml
 

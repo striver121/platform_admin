@@ -1,6 +1,7 @@
 FROM golang:1.21 as builder
 
-RUN git clone --branch=20200403-1 --depth=1 https://github.com/camptocamp/helm-sops \
+#RUN git clone --branch=20200403-1 --depth=1 https://github.com/camptocamp/helm-sops \
+RUN git clone --branch=20230706-1 --depth=1 https://github.com/camptocamp/helm-sops \
   && cd helm-sops \
   && go build
 

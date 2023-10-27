@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 helmCharts:
 - name: secrets-store-csi-driver
-  includeCRDs: ture
   repo: https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
   releaseName: secrets-store-csi-driver
   version: 1.3.4

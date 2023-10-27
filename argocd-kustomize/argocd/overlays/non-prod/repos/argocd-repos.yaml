@@ -6,17 +6,39 @@ metadata:
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  name: secrets-store-csi-driver
+  name: CSI-Driver
   type: helm
   url: https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: googleapis
+  name: jenkins
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  name: istio.io
+  name: Jenkins
   type: helm
-  url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
+  url: https://charts.jenkins.io
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bitnami
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: Bitnami
+  type: helm
+  url: https://charts.bitnami.com/bitnami
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudnative
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: Cloudnative
+  type: helm
+  url: https://cloudnativeapp.github.io/charts/curated/

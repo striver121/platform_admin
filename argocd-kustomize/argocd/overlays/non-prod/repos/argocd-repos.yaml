@@ -2,6 +2,28 @@
 apiVersion: v1
 kind: Secret
 metadata:
+  name: platform-admin
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: Platform-Admin
+  type: git
+  url: https://github.com/striver121/platform_admin.git
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: platform-devs
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: Platform-Devs
+  type: git
+  url: https://github.com/striver121/platform_devs.git
+---
+apiVersion: v1
+kind: Secret
+metadata:
   name: secrets-store-csi-driver
   labels:
     argocd.argoproj.io/secret-type: repository

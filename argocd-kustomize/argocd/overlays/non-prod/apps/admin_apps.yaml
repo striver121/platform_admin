@@ -34,7 +34,7 @@ spec:
   project: platform-admin
   destination:
     server: https://34.31.116.147
-    namespace: default
+    namespace: kube-system
   source:
     repoURL: https://github.com/striver121/platform_admin.git
     targetRevision: HEAD

@@ -34,7 +34,7 @@ spec:
   project: platform-admin
   destination:
     server: https://34.31.116.147
-    namespace: csi-prd
+    namespace: default
   source:
     repoURL: https://github.com/striver121/platform_admin.git
     targetRevision: HEAD
@@ -48,30 +48,6 @@ spec:
     - CreateNamespace=true
     retry:
       limit: 5
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: csi-secretstore-driver-gcp-plugin
-  namespace: argocd-non-prod
-spec:
-  project: platform-admin
-  destination:
-    server: https://34.31.116.147
-    namespace: csi-prd
-  source:
-    repoURL: https://github.com/striver121/platform_admin.git
-    targetRevision: HEAD
-    path: platform_apps/csi-secretstore-driver-gcp-plugin/overlays/prd
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - Validate=true
-    - CreateNamespace=true
-    retry:
-      limit: 5 
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application

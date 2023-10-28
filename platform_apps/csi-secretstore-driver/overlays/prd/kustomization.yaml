@@ -7,3 +7,5 @@ namesuffix: -prd
 resources:
   - ../../base
 
+patchesStrategicMerge:
+  - resources/provider-gcp-plugin.yaml 

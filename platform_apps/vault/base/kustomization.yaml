@@ -10,7 +10,7 @@ helmCharts:
     injector:
       enable: false
     csi:
-      enable: false
+      enable: true
     server:
       dev:
         enable: true

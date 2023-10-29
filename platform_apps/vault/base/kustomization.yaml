@@ -7,9 +7,9 @@ helmCharts:
   version: 0.24.0
 #  valuesFile: values.yaml
    valuesInline:
-   server:
-     dev:
-     enable: true
+#   server:
+#     dev:
+#     enable: true
    injector:
      enable: false
    csi:

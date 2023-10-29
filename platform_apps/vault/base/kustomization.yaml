@@ -11,11 +11,6 @@ helmCharts:
       enable: false
     csi:
       enable: false
-  
-#  server:
-#    dev:
-#    enable: true
-#  injector:
-#    enable: false
-#  csi:
-#    enable: false
+    server:
+      dev:
+        enable: true

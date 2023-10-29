@@ -358,7 +358,8 @@ injector:
 server:
   # If true, or "-" with global.enabled true, Vault server will be installed.
   # See vault.mode in _helpers.tpl for implementation details.
-  enabled: "-"
+  #enabled: "-"
+  enabled: "-dev"  
   
   # [Enterprise Only] This value refers to a Kubernetes secret that you have
   # created that contains your enterprise license. If you are not using an

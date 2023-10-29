@@ -5,4 +5,12 @@ helmCharts:
   repo: https://helm.releases.hashicorp.com
   releaseName: vault
   version: 0.24.0
-  valuesFile: values.yaml
+#  valuesFile: values.yaml
+   valuesInline:
+   server:
+     dev:
+       enable: true
+   injector:
+     enable: false
+   csi:
+     enable: false

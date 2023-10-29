@@ -8,9 +8,9 @@ helmCharts:
 #  valuesFile: values.yaml
   valuesInline:
     injector:
-      enable: false
+      enabled: false
     csi:
-      enable: true
+      enabled: true
     server:
       dev:
-        enable: true
+        enabled: true

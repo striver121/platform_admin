@@ -11,8 +11,8 @@ resources:
   - apps/admin_apps.yaml
   - apps/dev_apps.yaml
 
-#generators:
-#  - generators/generator.yaml
+generators:
+  - generators/generator.yaml
 
 patchesStrategicMerge:
   - resources/argocd-repo-server-deploy.yaml

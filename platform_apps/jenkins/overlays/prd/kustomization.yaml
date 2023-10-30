@@ -12,7 +12,26 @@ generators:
 
 patchesStrategicMerge:
   - patches/StatefulSet-jenkins.yaml
-      
+
+patchesJson6902:
+- target:
+    group: ""
+    version: v1
+    kind: Secret
+    name: jenkins-secrets
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: jenkins-secrets
+- target:
+    group: ""
+    version: v1
+    kind: Secret
+    name: jenkins-credentials
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: jenkins-credentials
 #images:
 # - name: docker.io/striver121/demoapp:latest
 #   newName: docker.io/striver121/demoapp

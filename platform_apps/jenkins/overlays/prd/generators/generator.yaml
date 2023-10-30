@@ -4,8 +4,8 @@ kind: SopsSecretGenerator
 metadata:
   name: jenkins-secrets
 files:
-    - generators/secrets/master.key.base64.enc
-    - generators/secrets/hudson.util.Secret.base64.enc
+    - generators/secrets/master.key
+    - generators/secrets/hudson.util.Secret
 disableNameSuffixHash: true
 ---
 apiVersion: goabout.com/v1beta1
@@ -13,5 +13,5 @@ kind: SopsSecretGenerator
 metadata:
   name: jenkins-credentials
 files:
-    - generators/secrets/credentials.xml.base64.enc
+    - generators/secrets/credentials.xml
 disableNameSuffixHash: true

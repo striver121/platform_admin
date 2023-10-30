@@ -10,16 +10,16 @@ spec:
           secret:
             secretName: jenkins-secrets
             items:
-            - key: master.key.base64.enc
+            - key: master.key
               path: master.key
-            - key: hudson.util.Secret.base64.enc
+            - key: hudson.util.Secret
               path: hudson.util.Secret
         - name: jenkins-credentials
           secret:
             secretName: jenkins-credentials
             items:
-            - key: credentials.xml.base64.enc
-#              path: credentials.xml
+            - key: credentials.xml
+              path: credentials.xml
       containers:
         - name: jenkins
           volumeMounts:

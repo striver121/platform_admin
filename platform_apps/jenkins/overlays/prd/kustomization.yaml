@@ -10,8 +10,8 @@ resources:
 generators:
   - generators/generator.yaml
 
-#patchesStrategicMerge:
-#  - patches/StatefulSet-jenkins.yaml
+patchesStrategicMerge:
+  - patches/StatefulSet-jenkins.yaml
       
 #images:
 # - name: docker.io/striver121/demoapp:latest

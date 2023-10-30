@@ -100,7 +100,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nexus
+  name: nexus-prd
   namespace: argocd-non-prod
 spec:
   project: platform-admin

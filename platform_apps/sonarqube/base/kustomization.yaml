@@ -7,7 +7,7 @@ helmCharts:
   releaseName: sonarqube
 #  version: 4.0.2
   version: 10.2.1
-#  valuesFile: values.yaml
-  valuesInline:
-    service:
-      type: ClusterIP
+  valuesFile: values.yaml
+#  valuesInline:
+#    service:
+#      type: ClusterIP

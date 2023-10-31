@@ -16,16 +16,10 @@ spec:
               path: hudson.util.Secret
         - name: jenkins-credentials
           secret:
-#            secretName: jenkins-credentials
-            secretName: mysecret
+            secretName: jenkins-credentials
+#            secretName: mysecret
             items:
             - key: credentials.xml
-              path: credentials.xml
-        - name: jenkins-credentials1
-          secret:
-            secretName: jenkinscredentialsfile-prd
-            items:
-            - key: secret.credentials.xml
               path: credentials.xml
       containers:
         - name: jenkins
@@ -37,7 +31,4 @@ spec:
             mountPath: /var/jenkins_home/credentials.xml
             subPath: credentials.xml
             readOnly: true
-          - name: jenkins-credentials1
-            mountPath: /mnt/jenkins_home/credentials.xml
-            subPath: credentials.xml
-            readOnly: true
+  

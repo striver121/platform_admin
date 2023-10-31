@@ -15,11 +15,4 @@ metadata:
 files:
     - generators/secrets/credentials.xml
 disableNameSuffixHash: true
----
-apiVersion: goabout.com/v1beta1
-kind: SopsSecretGenerator
-metadata:
-  name: jenkinscredentialsfile
-files:
-    - generators/secrets/secret.credentials.xml
-disableNameSuffixHash: true
+

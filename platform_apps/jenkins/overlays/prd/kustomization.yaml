@@ -6,7 +6,7 @@ namesuffix: -prd
 
 resources:
   - ../../base
-  - generators/secrets/secret.credentials.xml
+#  - generators/secrets/secret.credentials.xml
 
 generators:
   - generators/generator.yaml

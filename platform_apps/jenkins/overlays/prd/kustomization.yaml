@@ -6,13 +6,12 @@ namesuffix: -prd
 
 resources:
   - ../../base
-#  - generators/secrets/secret.credentials.xml
-
+  
 generators:
   - generators/generator.yaml
 
-patchesStrategicMerge:
-  - patches/StatefulSet-jenkins.yaml
+#patchesStrategicMerge:
+#  - patches/StatefulSet-jenkins.yaml
 
 patchesJson6902:
 - target:

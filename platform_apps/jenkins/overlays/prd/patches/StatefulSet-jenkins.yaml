@@ -16,7 +16,8 @@ spec:
               path: hudson.util.Secret
         - name: jenkins-credentials
           secret:
-            secretName: jenkins-credentials
+#            secretName: jenkins-credentials
+            secretName: mysecret
             items:
             - key: credentials.xml
               path: credentials.xml

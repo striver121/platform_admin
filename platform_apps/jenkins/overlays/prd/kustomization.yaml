@@ -6,7 +6,6 @@ namespace: jenkins-prd
 
 resources:
   - ../../base
-  - resources/jcasc-default-config.yaml
   
 generators:
   - generators/generator.yaml

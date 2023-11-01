@@ -12,14 +12,9 @@ spec:
             items:
             - key: secret.key
               path: secret.key
-#            - key: master.key
-#              path: master.key
-#            - key: hudson.util.Secret
-#              path: hudson.util.Secret
         - name: jenkins-credentials
           secret:
             secretName: jenkins-credentials
-#            secretName: mysecret
             items:
             - key: credentials.xml
               path: credentials.xml

@@ -12,12 +12,6 @@ spec:
             items:
             - key: secret.key
               path: secret.key
-        - name: jenkins-config
-          secret:
-            secretName: jenkins-config
-            items:
-            - key: config.xml
-              path: config.xml
         - name: jenkins-credentials
           secret:
             secretName: jenkins-credentials
@@ -31,12 +25,11 @@ spec:
             mountPath: /var/jenkins_home/secret.key
             subPath: secret.key
             readOnly: true
-          - name: jenkins-config
-            mountPath: /var/jenkins_home/config.xml
-            subPath: credentials.xml
-            readOnly: false
           - name: jenkins-credentials
             mountPath: /var/jenkins_home/credentials.xml
             subPath: credentials.xml
             readOnly: false
-  
+          - name: jenkins-credentials
+            mountPath: /var/jenkins_home/config.xml
+            subPath: config.xml
+            readOnly: false

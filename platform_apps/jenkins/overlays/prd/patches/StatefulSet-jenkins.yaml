@@ -18,6 +18,8 @@ spec:
             items:
             - key: credentials.xml
               path: credentials.xml
+            - key: config.xml
+              path: config.xml              
       containers:
         - name: jenkins
           volumeMounts:

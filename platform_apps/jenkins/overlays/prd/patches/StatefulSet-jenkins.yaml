@@ -18,8 +18,6 @@ spec:
             items:
             - key: credentials.xml
               path: credentials.xml
-            - key: jcasc-default-config.yaml
-              path: jcasc-default-config.yaml              
       containers:
         - name: jenkins
           volumeMounts:
@@ -30,8 +28,4 @@ spec:
           - name: jenkins-credentials
             mountPath: /var/jenkins_home/credentials.xml
             subPath: credentials.xml
-            readOnly: false
-          - name: jenkins-credentials
-            mountPath: /var/jenkins_home/casc_configs/jcasc-default-config.yaml
-            subPath: jcasc-default-config.yaml
             readOnly: false

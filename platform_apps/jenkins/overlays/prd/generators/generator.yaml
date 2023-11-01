@@ -13,5 +13,4 @@ metadata:
   name: jenkins-credentials
 files:
     - generators/secrets/credentials.xml
-    - generators/secrets/jcasc-default-config.yaml
 disableNameSuffixHash: true

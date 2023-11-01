@@ -441,11 +441,11 @@ controller:
       welcome-message: |
         jenkins:
           systemMessage: Welcome to  Jenkins, This Jenkins is configured and managed 'as code'.
-#      nv-cloud: |
-#        jenkins:
+      nv-cloud: |
+        jenkins:
           clouds:
           - kubernetes:
-              addMasterProxyEnvVars: true
+              addMasterProxyEnvVars: false
               containerCap: 10
               containerCapStr: "10"
               credentialsId: 

@@ -21,7 +21,7 @@ spec:
       containers:
         - name: jenkins
           volumeMounts:
-          - name: jenkins-secrets
+          - name: jenkins-keys
             mountPath: /var/jenkins_home/secret.key
             subPath: secret.key
             readOnly: false

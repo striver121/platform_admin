@@ -437,6 +437,27 @@ controller:
     #    jenkins:
     #      systemMessage: Welcome to our CI\CD server.  This Jenkins is configured and managed 'as code'.
     # Allows adding to the top-level security JCasC section. For legacy,  default the chart includes apiToken configurations
+    configScripts:
+      welcome-message: |
+        jenkins:
+          systemMessage: Welcome to  Jenkins, This Jenkins is configured and managed 'as code'.
+      nv-cloud: |
+        jenkins:
+          clouds:
+          - kubernetes:
+              addMasterProxyEnvVars: true
+              containerCap: 10
+              containerCapStr: "10"
+              credentialsId: 
+              jenkinsTunnel: jenkins-agent.jenkins-prd.svc.cluster.local:50000
+              jenkinsUrl: http://jenkins.jenkins-prd.svc.cluster.local:8080
+              serverUrl: "https://kubernetes.default"
+              name: "kubernetes"
+              namespace: "jenkins-prd"
+              podLabel:
+                - key: "jenkins-prd/jenkins-jenkins-agent"
+                  value: "true"  
+              
     security:
       apiToken:
         creationOfLegacyTokenEnabled: false

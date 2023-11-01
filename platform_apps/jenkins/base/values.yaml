@@ -454,10 +454,7 @@ controller:
               serverUrl: "https://kubernetes.default"
               name: "kubernetes"
               namespace: "jenkins-prd"
-              podLabel:
-                - key: "jenkins-prd/jenkins-jenkins-agent"
-                  value: "true"  
-              
+             
     security:
       apiToken:
         creationOfLegacyTokenEnabled: false

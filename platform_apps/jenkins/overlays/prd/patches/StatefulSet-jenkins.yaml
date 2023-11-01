@@ -10,10 +10,12 @@ spec:
           secret:
             secretName: jenkins-secrets
             items:
-            - key: master.key
-              path: master.key
-            - key: hudson.util.Secret
-              path: hudson.util.Secret
+            - key: secret.key
+              path: secret.key
+#            - key: master.key
+#              path: master.key
+#            - key: hudson.util.Secret
+#              path: hudson.util.Secret
         - name: jenkins-credentials
           secret:
             secretName: jenkins-credentials
@@ -25,7 +27,8 @@ spec:
         - name: jenkins
           volumeMounts:
           - name: jenkins-keys
-            mountPath: /var/jenkins_home/secrets
+            mountPath: /var/jenkins_home/secret.key
+            subPath: secret.key
             readOnly: true
           - name: jenkins-credentials
             mountPath: /var/jenkins_home/credentials.xml

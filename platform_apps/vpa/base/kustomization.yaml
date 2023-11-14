@@ -10,7 +10,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 helmCharts:
-- name: vpa
+- name: vertical-pod-autoscaler
   repo: https://cowboysysop.github.io/charts/
   releaseName: vpa
   version: 9.4.0

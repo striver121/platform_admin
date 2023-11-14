@@ -1,8 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 helmCharts:
+- name: vpa
+  repo: https://charts.fairwinds.com/stable
+  releaseName: vpa
+  version: 3.0.2
+#  valuesFile: vpa-values.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmCharts:
 - name: goldilocks
   repo: https://charts.fairwinds.com/stable
   releaseName: goldilocks
   version: 8.0.0
-#  valuesFile: values.yaml
+#  valuesFile: goldi-locks-values.yaml

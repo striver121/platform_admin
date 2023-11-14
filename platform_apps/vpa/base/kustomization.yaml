@@ -1,8 +1,17 @@
+#apiVersion: kustomize.config.k8s.io/v1beta1
+#kind: Kustomization
+#helmCharts:
+#- name: vpa
+#  repo: https://charts.fairwinds.com/stable
+#  releaseName: vpa
+#  version: 3.0.2
+#  valuesFile: values.yaml
+---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 helmCharts:
 - name: vpa
-  repo: https://charts.fairwinds.com/stable
+  repo: https://cowboysysop.github.io/charts/
   releaseName: vpa
-  version: 3.0.2
+  version: 9.4.0
 #  valuesFile: values.yaml

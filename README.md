@@ -4,4 +4,6 @@ Argocd managed by Argocd, let's call this topology as Master and Slave, where Ma
 > You can find more gets on information about **Argocd manages Argocd** [here](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup#manage-argo-cd-using-argo-cd).
 
 
-### Argocd Master:
+### Argocd Master & Argocd Child:
+
+After Deploying Argocd Master with Terraform or Helm, The master is pointed to a git repo called `argocd_kustomization` through a values.yaml where Master's argo-repo server reads the repo and spin up the Argocd Child application/s according to the CaC, the application/s defined using kustomization which have base (simply calling default Argocd from ArgoProj) and overlays (using base + completely custom child Argocd as per organization's requirements.

@@ -13,4 +13,5 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 
 ### Master and Child Argocd Topology:
 ![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
+
 [Topology](https://github.com/striver121/platform_admin/blob/master/Topology.pdf)

@@ -7,7 +7,13 @@ namespace: vault
 resources:
   - ../../base
       
-#images:
-# - name: docker.io/striver121/demoapp:latest
-#   newName: docker.io/striver121/demoapp
-#   newTag: v.0.23
+patchesJson6902:
+- target:
+    group: "apps"
+    version: v1
+    kind: DaemonSet
+    name: vault-csi-provider
+  patch: |-
+    - op: add
+      path: /spec/template/spec/containers/1/command/-
+      value: vault && vault version

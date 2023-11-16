@@ -15,5 +15,5 @@ patchesJson6902:
     name: vault
   patch: |-
     - op: add
-      path: /spec/template/spec/containers/command/-
+      path: /spec/template/spec/containers/0/command/-
       value: vault kv put secret/my-pass password="$(tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 20 | head -1)"

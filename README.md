@@ -32,3 +32,11 @@ You might want to use Helm and Kustomize together when:
 -   And more…
 
 **Read full documentation** [here](https://trstringer.com/helm-kustomize) **&** [here](https://medium.com/@tharukam/generate-kubernetes-manifests-with-helm-charts-using-kustomize-2f82ab5c5f11).
+
+# Managing Secrets:
+Child Argocd has further abilities to decrypt the secrets through following components.
+
+##**> SOPS** [doc*](https://github.com/getsops/sops)
+##**> SOPS+GCP KMS** [doc*](https://www.middlewareinventory.com/blog/using-sops-with-aws-kms-encrypt-and-decrypt-files-devops-junction/)
+##**> HELM+SOPS** [doc*](https://github.com/camptocamp/argocd-helm-sops-example)
+##**> Kustomize+SOPS (KSOPS)** [doc*](https://github.com/goabout/kustomize-sopssecretgenerator)

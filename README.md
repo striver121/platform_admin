@@ -19,9 +19,13 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 [Enlarge Topology in PDF](https://github.com/striver121/platform_admin/blob/master/images/Topology.pdf)
 
 
-# Using Helm + Kustomize: 
+### Master and Child Argocd Topology:
+![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
+[Topology](https://github.com/striver121/platform_admin/blob/master/Topology.pdf)
 
-### TL;DR 
+### Using Helm + Kustomize: 
+
+##### TL;DR 
 
 You might want to use Helm and Kustomize together when:
 
@@ -37,12 +41,29 @@ You might want to use Helm and Kustomize together when:
 - Purely declarative (just like Kubectl)
 - Multiple Configurations
 - Manages any number of different configurations
-- 
-![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
 
-![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
+![Alt text](https://github.com/striver121/platform_admin/blob/master/images/Topology.jpg)
 
-Compare Kustomize to native Helm and native Kubectl to better highlight the differentiated functionality that it offers.
+``````
+├── base
+  │   ├── deployment.yaml
+  │   ├── hpa.yaml
+  │   ├── kustomization.yaml
+  │   └── service.yaml
+  └── overlays
+      ├── dev
+      │   ├── hpa.yaml
+      │   └── kustomization.yaml
+      ├── production
+      │   ├── hpa.yaml
+      │   ├── kustomization.yaml
+      │   ├── rollout-replica.yaml
+      │   └── service-loadbalancer.yaml
+      └── staging
+          ├── hpa.yaml
+          ├── kustomization.yaml
+          └── service-nodeport.yaml
+``````
 
 **Read full documentation** [here](https://trstringer.com/helm-kustomize) **&** [here](https://medium.com/@tharukam/generate-kubernetes-manifests-with-helm-charts-using-kustomize-2f82ab5c5f11).
 

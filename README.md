@@ -17,9 +17,9 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 [Enlarge Topology in PDF](https://github.com/striver121/platform_admin/blob/master/Topology.pdf)
 
 
-### Using Helm + Kustomize: 
+# Using Helm + Kustomize: 
 
-##### TL;DR 
+### TL;DR 
 
 You might want to use Helm and Kustomize together when:
 

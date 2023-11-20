@@ -25,11 +25,24 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 
 You might want to use Helm and Kustomize together when:
 
--   You don’t have control over the Helm chart (it’s not yours).
--   You want different config for different environments.
--   You don’t want your secrets in a Helm chart, but you want them patched in by Kustomize.
--   Cross-cutting fields
--   And more…
+-  You don’t have control over the Helm chart (it’s not yours).
+-  You want different config for different environments.
+-  You don’t want your secrets in a Helm chart, but you want them patched in by Kustomize.
+-  Cross-cutting fields
+-  Kubectl Native
+- No need to install or manage as a separate dependency
+- Plain Yaml
+- No complex templating language
+- Declarative
+- Purely declarative (just like Kubectl)
+- Multiple Configurations
+- Manages any number of different configurations
+- 
+![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
+
+![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
+
+Compare Kustomize to native Helm and native Kubectl to better highlight the differentiated functionality that it offers.
 
 **Read full documentation** [here](https://trstringer.com/helm-kustomize) **&** [here](https://medium.com/@tharukam/generate-kubernetes-manifests-with-helm-charts-using-kustomize-2f82ab5c5f11).
 

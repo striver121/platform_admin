@@ -15,3 +15,18 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 ![Alt text](https://github.com/striver121/platform_admin/blob/master/Topology.jpg)
 
 [Enlarge Topology in PDF](https://github.com/striver121/platform_admin/blob/master/Topology.pdf)
+
+
+### Using Helm + Kustomize: 
+
+##### TL;DR 
+
+You might want to use Helm and Kustomize together when:
+
+-   You don’t have control over the Helm chart (it’s not yours).
+-   You want different config for different environments.
+-   You don’t want your secrets in a Helm chart, but you want them patched in by Kustomize.
+-   Cross-cutting fields
+-   And more…
+
+**Read full documentation** [here](https://trstringer.com/helm-kustomize) **&** [here](https://medium.com/@tharukam/generate-kubernetes-manifests-with-helm-charts-using-kustomize-2f82ab5c5f11).

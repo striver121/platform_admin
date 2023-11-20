@@ -20,7 +20,6 @@ After Deploying Argocd Master with Terraform or Helm, The master is pointed to a
 
 
 # Using Helm + Kustomize: 
-![Alt text](https://github.com/striver121/platform_admin/blob/master/images/Helm-Kustomize.png)
 
 ### TL;DR 
 

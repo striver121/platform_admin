@@ -42,7 +42,7 @@ You might want to use Helm and Kustomize together when:
 - Multiple Configurations
 - Manages any number of different configurations
 
-![Alt text](https://github.com/striver121/platform_admin/blob/master/images/Kustomize.svg)
+![Alt text](https://github.com/striver121/platform_admin/blob/master/images/kustomize.png)
 
 ``````
 ├── base

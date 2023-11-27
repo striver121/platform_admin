@@ -185,7 +185,7 @@ spec:
     path: platform_apps/prometheus/overlays/prd
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
     syncOptions:
     - Validate=true

@@ -209,7 +209,7 @@ spec:
     path: platform_apps/grafana/overlays/prd
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
     syncOptions:
     - Validate=true

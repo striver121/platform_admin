@@ -9,4 +9,4 @@ helmCharts:
 - name: kube-prometheus-stack
   repo: https://prometheus-community.github.io/helm-charts
   releaseName: kube-prometheus-stack
- # version: 0.70.0
+  version: 55.1.0

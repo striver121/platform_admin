@@ -10,3 +10,4 @@ helmCharts:
   repo: https://prometheus-community.github.io/helm-charts
   releaseName: kube-prometheus-stack
   version: 55.1.0
+  valuesFile: values.yaml

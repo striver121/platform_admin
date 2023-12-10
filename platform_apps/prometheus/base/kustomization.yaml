@@ -1,11 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 helmCharts:
-#- name: prometheus
-#  repo: https://prometheus-community.github.io/helm-charts
-#  releaseName: prometheus
-#  version: 25.8.0
-#  valuesFile: values.yaml
+- name: prometheus-operator-crds
+  repo: https://prometheus-community.github.io/helm-charts
+  releaseName: prometheus-operator-crds
+  version: 8.0.1
 - name: kube-prometheus-stack
   repo: https://prometheus-community.github.io/helm-charts
   releaseName: kube-prometheus-stack

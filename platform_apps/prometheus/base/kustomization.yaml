@@ -4,5 +4,5 @@ helmCharts:
 - name: kube-prometheus-stack
   repo: https://prometheus-community.github.io/helm-charts
   releaseName: kube-prometheus-stack
-  version: 54.2.2
-  #valuesFile: values.yaml
+  version: 55.0.1
+  valuesFile: values.yaml

@@ -182,7 +182,7 @@ spec:
   source:
     repoURL: https://github.com/striver121/platform_admin.git
     targetRevision: HEAD
-    path: platform_apps/prometheus-operator-crds/overlays/prd
+    path: platform_apps/observability/monitoring/prometheus-operator-crds/overlays/prd
   syncPolicy:
     automated:
       prune: true
@@ -206,7 +206,7 @@ spec:
 #  source:
 #    repoURL: https://github.com/striver121/platform_admin.git
 #    targetRevision: HEAD
-#    path: platform_apps/prometheus/overlays/prd
+#    path: platform_apps/observability/monitoring/prometheus/overlays/prd
 #  syncPolicy:
 #    automated:
 #      prune: true

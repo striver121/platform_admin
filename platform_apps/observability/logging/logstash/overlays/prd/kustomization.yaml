@@ -1,0 +1,92 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  env: prod
+  project-name: ca-prod-itools
+  team: devops
+  app: logs-logstash
+  type: cluster-internal
+  region: ca
+  parent: argocd-prod
+
+bases:
+  - ../../base
+
+generators:
+  - generators/generator.yaml
+  
+patchesStrategicMerge:
+  - patches/logs-logstash-cm.yaml
+  
+configurations:
+  - config/config.yaml
+  
+configMapGenerator:
+    - name: app-vars
+      literals:
+        - PROJECTNAME='ca-prod-itools'
+
+generatorOptions:
+ disableNameSuffixHash: true
+
+vars:
+  - name: PROJECT
+    objref:
+      kind: ConfigMap
+      name: app-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.PROJECTNAME
+  
+images:
+ - name: docker.io/bitnami/logstash:7.10.1-debian-10-r9
+   newName: gcr.io/xxx/logstash
+   newTag: 7.10.0-debian-10-r0
+
+patchesJSON6902:
+- target:
+    group: apps
+    version: v1
+    kind: StatefulSet
+    name: logs-logstash
+  patch: |-
+    - op: add
+      path: /spec/template/spec/volumes/-
+      value:
+        name: service-account-credentials-volume
+        secret: 
+          secretName: gcp-sa
+          items:
+          - key: sa_json
+            path: sa.json
+    - op: add
+      path: /spec/template/spec/containers/0/volumeMounts/-
+      value:
+        name: service-account-credentials-volume
+        mountPath: /.secrets/gcp
+        readOnly: true
+    - op: add
+      path: /spec/template/spec/containers/0/env/-
+      value:
+        name: GOOGLE_APPLICATION_CREDENTIALS
+        value: /.secrets/gcp/sa.json
+    - op: add
+      path: /spec/template/spec/containers/0/ports/-
+      value:
+        name: logstash
+        containerPort: 50085
+        protocol: TCP
+- target:
+    group: 
+    version: v1
+    kind: Service
+    name: logs-logstash
+  patch: |-
+    - op: add
+      path: /spec/ports/-
+      value:
+        name: beats
+        port: 50085
+        protocol: TCP
+        targetPort: 50085

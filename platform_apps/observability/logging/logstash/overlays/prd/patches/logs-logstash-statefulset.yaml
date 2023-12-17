@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: logs-logstash
+spec:
+  template:
+    spec:
+      containers:
+        - env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /.secrets/gcp/sa.json
+#          ports:
+#            - containerPort: 50085
+#              name: logstash
+#              protocol: TCP
+#          volumeMounts:
+#            - mountPath: /.secrets/gcp
+#              name: service-account-credentials-volume
+#              readOnly: true
+      volumes:
+        - name: service-account-credentials-volume
+          secret:
+            defaultMode: 420
+            items:
+            - keys: sa_json
+              path: sa.json
+            secretName: gcp-sa

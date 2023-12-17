@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logs-logstash
+data:
+  logstash.conf: |-
+    input {
+      # udp {
+      #   port => 1514
+      #   type => syslog
+      # }
+      # tcp {
+      #   port => 1514
+      #   type => syslog
+      # }
+      http { port => 8080 }
+      beats { port => 50085 }
+    }
+    filter {
+      if [index_prefix] == "k8s-logs" {
+        if [message] =~ /^\{.*\}$/ {
+          json {
+            source => "message"
+            skip_on_invalid_json => true
+        }
+      }
+    }
+    mutate {
+      add_field => { "[@metadata][index_prefix]" => "%{index_prefix}-%{+YYYY.MM.dd}" }
+      remove_field => ["index_prefix"]
+      }
+    }    
+    output {
+      # elasticsearch {
+      #   hosts => ["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
+      #   manage_template => false
+      #   index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+      # }
+      # gelf {
+      #   host => "${GRAYLOG_HOST}"
+      #   port => ${GRAYLOG_PORT}
+      # }
+      google_cloud_storage {
+        bucket => "ca-prod-itools-app-logs"
+        json_key_file => "/.secrets/gcp/sa.json"
+        temp_directory => "/tmp/logstash-gcs"
+        log_file_prefix => "logstash_$(PROJECT)"
+        max_file_size_kbytes => 5120
+        output_format => "plain"
+        date_pattern => "%Y-%m-%dT%H:00"
+        flush_interval_secs => 2
+        gzip => false
+        gzip_content_encoding => false
+        uploader_interval_secs => 60
+        include_uuid => false
+        include_hostname => true
+      }
+      # stdout {}
+    }

@@ -1,9 +1,8 @@
----
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: opentelemetry-operator-selfsigned-issuer
-  namespace: cert-manager
+  name: selfsigned-issuer
+  namespace: open-telemetry
 spec:
   selfSigned: {}
 #---

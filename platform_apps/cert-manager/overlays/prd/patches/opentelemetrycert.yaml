@@ -4,33 +4,33 @@ kind: ClusterIssuer
 metadata:
   name: selfsigned-issuer
 spec:
-  selfSigned: {}
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: my-selfsigned-ca
-  namespace: open-telemetry
-spec:
-  isCA: true
-  commonName: my-selfsigned-ca
-  secretName: root-secret
-  privateKey:
-    algorithm: ECDSA
-    size: 256
-  issuerRef:
-    name: selfsigned-issuer
-    kind: ClusterIssuer
-    group: cert-manager.io
----
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: my-ca-issuer
-  namespace: open-telemetry
-spec:
-  ca:
-    secretName: root-secret
+    secretName: selfsigned-ca
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+#  name: my-selfsigned-ca
+#  namespace: open-telemetry
+#spec:
+#  isCA: true
+#  commonName: my-selfsigned-ca
+#  secretName: root-secret
+#  privateKey:
+#    algorithm: ECDSA
+#    size: 256
+#  issuerRef:
+#    name: selfsigned-issuer
+#    kind: ClusterIssuer
+#    group: cert-manager.io
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Issuer
+#metadata:
+#  name: my-ca-issuer
+#  namespace: open-telemetry
+#spec:
+#  ca:
+#    secretName: root-secret
 #---
 #apiVersion: cert-manager.io/v1
 #kind: Issuer

@@ -14,7 +14,7 @@ spec:
 #      name: kustomize-enable-helm
     repoURL: https://github.com/striver121/platform_admin.git
     targetRevision: HEAD
-    path: platform_apps/jenkins/overlays/prd
+    path: platform_apps/CI/jenkins/overlays/prd
   syncPolicy:
     automated:
       prune: true
@@ -72,30 +72,30 @@ spec:
     - CreateNamespace=true
     retry:
       limit: 5
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: cert-manager
-  namespace: argocd-non-prod
-spec:
-  project: platform-admin
-  destination:
-    server: https://34.31.116.147
-    namespace: cert-manager
-  source:
-    repoURL: https://github.com/striver121/platform_admin.git
-    targetRevision: HEAD
-    path: platform_apps/cert-manager/overlays/prd
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - Validate=true
-    - CreateNamespace=true
-    retry:
-      limit: 5
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: cert-manager
+#  namespace: argocd-non-prod
+#spec:
+#  project: platform-admin
+#  destination:
+#    server: https://34.31.116.147
+#    namespace: cert-manager
+#  source:
+#    repoURL: https://github.com/striver121/platform_admin.git
+#    targetRevision: HEAD
+#    path: platform_apps/cert-manager/overlays/prd
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#    - Validate=true
+#    - CreateNamespace=true
+#    retry:
+#      limit: 5
 #---
 #apiVersion: argoproj.io/v1alpha1
 #kind: Application
@@ -144,30 +144,30 @@ spec:
 #    - CreateNamespace=true
 #    retry:
 #      limit: 5
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: goldilocks
-  namespace: argocd-non-prod
-spec:
-  project: platform-admin
-  destination:
-    server: https://34.31.116.147
-    namespace: goldilocks
-  source:
-    repoURL: https://github.com/striver121/platform_admin.git
-    targetRevision: HEAD
-    path: platform_apps/goldilocks/overlays/prd
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - Validate=true
-    - CreateNamespace=true
-    retry:
-      limit: 5
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: goldilocks
+#  namespace: argocd-non-prod
+#spec:
+#  project: platform-admin
+#  destination:
+#    server: https://34.31.116.147
+#    namespace: goldilocks
+#  source:
+#    repoURL: https://github.com/striver121/platform_admin.git
+#    targetRevision: HEAD
+#    path: platform_apps/goldilocks/overlays/prd
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#    - Validate=true
+#    - CreateNamespace=true
+#    retry:
+#      limit: 5
 #---
 #apiVersion: argoproj.io/v1alpha1
 #kind: Application

@@ -27,7 +27,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: my-ca-issuer
-  namespace: sandbox
+  namespace: open-telemetry
 spec:
   ca:
     secretName: root-secret

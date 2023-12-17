@@ -14,4 +14,4 @@ patchesStrategicMerge:
 #  - patches/opentelemetrycert.yaml
 
 resources:
-  - patches/opentelemetrycert.yaml
+#  - patches/opentelemetrycert.yaml

@@ -7,7 +7,7 @@ resources:
   - ../../base
 
 generators:
-#  - generators/generator.yaml
+  - generators/generator.yaml
 
 patchesStrategicMerge:
 #  - patches/cluster-role-bindings.yaml

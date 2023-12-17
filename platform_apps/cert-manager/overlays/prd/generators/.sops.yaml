@@ -1,0 +1,5 @@
+creation_rules:
+  - path_regex: .*
+    encrypted_regex: ^(data|stringData)$
+#    gcp_kms: projects/arc-mahir-sandbox/locations/global/keyRings/sandbox-keychain 
+    gcp_kms: projects/arc-mahir-sandbox/locations/global/keyRings/sandbox-keychain/cryptoKeys/key01 

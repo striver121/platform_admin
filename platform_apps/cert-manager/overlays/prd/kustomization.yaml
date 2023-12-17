@@ -6,6 +6,9 @@ namespace: cert-manager
 resources:
   - ../../base
 
+generators:
+  - generators/generator.yaml
+
 patchesStrategicMerge:
 #  - patches/cluster-role-bindings.yaml
-  - patches/opentelemetrycert.yaml
+#  - patches/opentelemetrycert.yaml

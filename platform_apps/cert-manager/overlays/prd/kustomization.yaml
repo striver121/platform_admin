@@ -11,4 +11,7 @@ generators:
 
 patchesStrategicMerge:
 #  - patches/cluster-role-bindings.yaml
+#  - patches/opentelemetrycert.yaml
+
+resources:
   - patches/opentelemetrycert.yaml

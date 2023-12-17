@@ -7,4 +7,4 @@ resources:
   - ../../base
 
 patchesStrategicMerge:
-  - patches/opentelemetrycert.yaml
+  - patches/cluster-role-bindings.yaml

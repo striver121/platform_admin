@@ -1,25 +1,58 @@
 ---
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: opentelemetry-operator-selfsigned-issuer
-  namespace: cert-manager
+  name: selfsigned-issuer
 spec:
   selfSigned: {}
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: opentelemetry-operator-serving-cert
+  name: my-selfsigned-ca
   namespace: open-telemetry
 spec:
-  dnsNames:
-    - opentelemetry-operator-webhook-service.opentelemetry-operator-system.svc
-    - opentelemetry-operator-webhook-service.opentelemetry-operator-system.svc.cluster.local
+  isCA: true
+  commonName: my-selfsigned-ca
+  secretName: root-secret
+  privateKey:
+    algorithm: ECDSA
+    size: 256
   issuerRef:
-    kind: Issuer
-    name: opentelemetry-operator-selfsigned-issuer
-  secretName: opentelemetry-operator-controller-manager-service-cert
-  subject:
-    organizationalUnits:
-      - "opentelemetry-operator"
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: my-ca-issuer
+  namespace: open-telemetry
+spec:
+  ca:
+    secretName: root-secret
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Issuer
+#metadata:
+#  name: selfsigned-issuer
+#  namespace: sandbox
+#spec:
+#  selfSigned: {}  
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+#  name: opentelemetry-operator-serving-cert
+#  namespace: open-telemetry
+#spec:
+#  dnsNames:
+#    - opentelemetry-operator-webhook-service.opentelemetry-operator-system.svc
+#    - opentelemetry-operator-webhook-service.opentelemetry-operator-system.svc.cluster.local
+#  issuerRef:
+#    kind: Issuer
+#    name: opentelemetry-operator-selfsigned-issuer
+#  secretName: opentelemetry-operator-controller-manager-service-cert
+#  subject:
+#    organizationalUnits:
+#      - "opentelemetry-operator"
